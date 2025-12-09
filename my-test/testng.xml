@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<!--
+TestNG Configuration Example
+Features:
+1. Test configuration (multiple tests, suites)
+2. Parallel execution
+3. Data-driven testing (via parameters)
+4. Grouping of tests
+-->
+
+<suite name="Advanced Suite" parallel="tests" thread-count="2">
+  <!-- Parallel execution: runs tests in parallel, 2 threads -->
+
+  <test name="Unit Tests" group-by-instances="true">
+    <!-- Grouping: only runs tests in 'unit' group -->
+    <groups>
+      <run>
+        <include name="unit"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.example.FirstTestNG"/>
+      <class name="com.example.AppTest"/>
+    </classes>
+  </test>
+
+  <test name="Integration Tests">
+    <!-- Data-driven: pass parameters to test classes -->
+    <parameter name="baseUrl" value="https://jsonplaceholder.typicode.com"/>
+    <classes>
+      <class name="com.example.FirstTestNG"/>
+    </classes>
+  </test>
+
+  <test name="Cucumber Features">
+    <classes>
+      <class name="com.example.runners.CucumberTestNGRunner"/>
+    </classes>
+  </test>
+</suite>

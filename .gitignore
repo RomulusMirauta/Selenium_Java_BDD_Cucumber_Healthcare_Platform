@@ -1,0 +1,83 @@
+# Java build files
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+target/
+.mvn/
+mvnw*
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# TestNG
+test-output/
+
+# Logs
+*.log
+hs_err_pid*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Maven / Gradle
+target/
+build/
+out/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Selenium WebDriver downloads
+selenium-server-*.jar
+
+# Environment files
+.env
+
+# Node (if Angular or frontend present)
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Test reports
+test-output/
+allure-results/
+allure-report/
+
+# Misc
+.donotpush/
+*.sh
+.chatmodes
+.env
+*.swp
+*.swo
+*.bak
+*.tmp
+*.dll
+openJdk-25/
+testsPlaywright/
