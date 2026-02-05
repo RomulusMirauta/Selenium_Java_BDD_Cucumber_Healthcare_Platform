@@ -81,3 +81,11 @@ allure-report/
 *.dll
 openJdk-25/
 testsPlaywright/
+maven/
+
+m2.conf
+mvn
+mvn.cmd
+mvnDebug
+mvnDebug.cmd
+mvnyjp

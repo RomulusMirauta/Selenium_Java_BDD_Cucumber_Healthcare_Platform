@@ -40,7 +40,7 @@ mvn -DskipTests install
 mvn test
 
 # Run only Cucumber features using TestNG runner
-mvn -Dtest=com.example.runners.CucumberTestNGRunner test
+mvn "-Dtest=com.example.runners.CucumberTestNGRunner" test
 
 # Run a specific feature or test
 mvn -Dtest=FirstTest test
