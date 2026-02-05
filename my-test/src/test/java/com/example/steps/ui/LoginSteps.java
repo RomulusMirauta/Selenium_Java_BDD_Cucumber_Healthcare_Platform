@@ -1,8 +1,8 @@
 package com.example.steps.ui;
 
-import com.example.config.Config;
-import com.example.driver.DriverFactory;
-import com.example.pages.LoginPage;
+import com.example.helpers.config.Config;
+import com.example.helpers.driver.DriverFactory;
+import com.example.helpers.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

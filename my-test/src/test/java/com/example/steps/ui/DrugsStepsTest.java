@@ -1,6 +1,6 @@
 package com.example.steps.ui;
 
-import com.example.driver.DriverFactory;
+import com.example.helpers.driver.DriverFactory;
 import org.mockito.Mockito;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

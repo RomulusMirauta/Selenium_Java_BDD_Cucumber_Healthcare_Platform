@@ -1,10 +1,10 @@
 package com.example.steps.e2e;
 
-import com.example.config.Config;
-import com.example.driver.DriverFactory;
-import com.example.pages.PatientsPage;
-import com.example.pages.LoginPage;
-import com.example.utils.DBUtils;
+import com.example.helpers.config.Config;
+import com.example.helpers.driver.DriverFactory;
+import com.example.helpers.pages.PatientsPage;
+import com.example.helpers.pages.LoginPage;
+import com.example.helpers.utils.DBUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;

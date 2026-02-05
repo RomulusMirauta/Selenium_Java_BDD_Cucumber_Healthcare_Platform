@@ -1,10 +1,10 @@
-package com.example.helpers.runners;
+package com.example.runners;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "src/test/java/com/resources/features",
         glue = {"com.example.steps"},
         plugin = {"pretty", "html:target/cucumber-report.html"}
 )

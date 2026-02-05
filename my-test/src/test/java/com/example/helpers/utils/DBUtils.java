@@ -1,6 +1,6 @@
-package com.example.utils;
+package com.example.helpers.utils;
 
-import com.example.config.DbConfig;
+import com.example.helpers.config.DbConfig;
 
 import java.sql.*;
 import java.util.ArrayList;

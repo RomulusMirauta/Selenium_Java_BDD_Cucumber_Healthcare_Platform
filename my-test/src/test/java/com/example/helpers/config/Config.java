@@ -1,4 +1,4 @@
-package com.example.config;
+package com.example.helpers.config;
 
 public final class Config {
     public static final String BASE_URL =

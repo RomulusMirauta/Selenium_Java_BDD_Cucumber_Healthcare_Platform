@@ -1,6 +1,6 @@
 package com.example.steps;
 
-import com.example.driver.DriverFactory;
+import com.example.helpers.driver.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 

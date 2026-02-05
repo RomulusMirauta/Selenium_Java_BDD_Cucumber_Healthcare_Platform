@@ -1,8 +1,8 @@
 package com.example.steps.e2e;
 
-import com.example.driver.DriverFactory;
-import com.example.pages.DrugsPage;
-import com.example.utils.DBUtils;
+import com.example.helpers.driver.DriverFactory;
+import com.example.helpers.pages.DrugsPage;
+import com.example.helpers.utils.DBUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;

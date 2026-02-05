@@ -1,4 +1,4 @@
-package com.example.config;
+package com.example.helpers.config;
 
 public class DbConfig {
     public static final String DB_USER = System.getProperty("DB_USER", System.getenv().getOrDefault("DB_USER", "sa"));

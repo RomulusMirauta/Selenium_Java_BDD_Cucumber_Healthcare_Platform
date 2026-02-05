@@ -1,7 +1,7 @@
 package com.example.steps.ui;
 
-import com.example.driver.DriverFactory;
-import com.example.pages.DrugsPage;
+import com.example.helpers.driver.DriverFactory;
+import com.example.helpers.pages.DrugsPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;

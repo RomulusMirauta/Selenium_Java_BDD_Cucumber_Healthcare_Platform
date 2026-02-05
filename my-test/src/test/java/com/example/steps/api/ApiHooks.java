@@ -1,6 +1,6 @@
 package com.example.steps.api;
 
-import com.example.config.Config;
+import com.example.helpers.config.Config;
 import io.cucumber.java.Before;
 import io.restassured.RestAssured;
 

@@ -1,6 +1,6 @@
 package com.example.steps.ui;
 
-import com.example.driver.DriverFactory;
+import com.example.helpers.driver.DriverFactory;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
