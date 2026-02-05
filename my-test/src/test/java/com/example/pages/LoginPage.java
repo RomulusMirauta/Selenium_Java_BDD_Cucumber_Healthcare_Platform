@@ -16,7 +16,11 @@ public class LoginPage extends BasePage {
     }
 
     public void gotoPage(String path) {
-        driver.get(baseUrl + path);
+        if (baseUrl.toLowerCase().endsWith(".html")) {
+            driver.get(baseUrl);
+        } else {
+            driver.get(baseUrl + path);
+        }
     }
 
     public void login(String user, String pass) {

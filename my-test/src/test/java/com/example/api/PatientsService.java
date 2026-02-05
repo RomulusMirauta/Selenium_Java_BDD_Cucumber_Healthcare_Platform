@@ -13,13 +13,21 @@ public class PatientsService {
     }
 
     public Response addPatient(Object patient, String username, String password) {
+        java.util.Map<String, Object> payload = new java.util.HashMap<>();
+        if (patient instanceof java.util.Map<?, ?> map) {
+            for (java.util.Map.Entry<?, ?> entry : map.entrySet()) {
+                if (entry.getKey() != null) {
+                    payload.put(String.valueOf(entry.getKey()), entry.getValue());
+                }
+            }
+        }
+        payload.put("username", username);
+        payload.put("password", password);
         RequestSpecification req = RestAssured.given()
                 .baseUri(baseUrl)
                 .basePath("api/patients")
                 .contentType(ContentType.JSON)
-                .body(patient)
-                .queryParam("username", username)
-                .queryParam("password", password);
+                .body(payload);
         return req.post();
     }
 

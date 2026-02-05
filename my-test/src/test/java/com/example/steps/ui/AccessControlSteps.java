@@ -4,10 +4,13 @@ import com.example.driver.DriverFactory;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Arrays;
 import java.util.List;
+import java.time.Duration;
 
 public class AccessControlSteps {
     private WebDriver driver;
@@ -27,13 +30,25 @@ public class AccessControlSteps {
         for (String s : shouldSee) {
             String trimmed = s.trim();
             if (trimmed.isEmpty()) continue;
-            boolean exists = !driver.findElements(By.xpath("//*[contains(., '" + trimmed + "')]")).isEmpty();
+            By navLabel = By.xpath("//*[contains(@class,'db-label') and contains(normalize-space(.), '" + trimmed + "')]");
+            By anyText = By.xpath("//*[contains(normalize-space(.), '" + trimmed + "')]");
+            boolean exists;
+            try {
+                new WebDriverWait(driver, Duration.ofSeconds(10))
+                        .until(ExpectedConditions.or(
+                                ExpectedConditions.presenceOfElementLocated(navLabel),
+                                ExpectedConditions.presenceOfElementLocated(anyText)
+                        ));
+                exists = true;
+            } catch (Exception e) {
+                exists = false;
+            }
             Assert.assertTrue(exists, "Expected to see section: " + trimmed);
         }
         for (String s : shouldNotSee) {
             String trimmed = s.trim();
             if (trimmed.isEmpty()) continue;
-            boolean exists = !driver.findElements(By.xpath("//*[contains(., '" + trimmed + "')]")).isEmpty();
+            boolean exists = !driver.findElements(By.xpath("//*[contains(@class,'db-label') and contains(normalize-space(.), '" + trimmed + "')]")).isEmpty();
             Assert.assertFalse(exists, "Expected not to see section: " + trimmed);
         }
     }

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DrugsPage extends BasePage {
-    private final By drugsNav = By.cssSelector(".db-label:has-text('Drugs')");
+    private final By drugsNav = By.xpath("//*[contains(normalize-space(.), 'Drugs') and (self::a or self::button or contains(@class,'db-label'))]");
     private final By nameInput = By.cssSelector("[placeholder='Drug Name']");
     private final By descriptionInput = By.cssSelector("[placeholder='Description']");
     private final By dosageInput = By.cssSelector("[placeholder='Dosage']");
@@ -37,11 +37,26 @@ public class DrugsPage extends BasePage {
     }
 
     public void removeDrugByDetails(String name, String description, String dosage) {
-        List<WebElement> cards = findDrugCardsByName(name);
-        for (WebElement card : cards) {
+        for (int attempt = 0; attempt < 5; attempt++) {
+            List<WebElement> cards = findDrugCardsByName(name);
+            if (cards.isEmpty()) {
+                return;
+            }
+            WebElement card = cards.get(0);
             String text = card.getText();
             if (text.contains(description) && text.contains(dosage)) {
-                card.findElement(By.xpath(".//button[contains(., 'Remove')]")).click();
+                try {
+                    WebElement removeButton = card.findElement(By.xpath(".//button[contains(., 'Remove')]"));
+                    removeButton.click();
+                    acceptAlertIfPresent();
+                    new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(5))
+                            .until(org.openqa.selenium.support.ui.ExpectedConditions.stalenessOf(card));
+                } catch (org.openqa.selenium.StaleElementReferenceException ignored) {
+                    // element already detached
+                }
+            } else {
+                // If first match doesn't include details, remove it from consideration and try again
+                cards.remove(0);
             }
         }
     }

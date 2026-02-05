@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class PatientsApiSteps {
     private final SharedContext context;
-    private final PatientsService service = new PatientsService(Config.BASE_URL);
+    private final PatientsService service = new PatientsService(Config.API_BASE_URL);
     private Response addResponse;
     private Object patientId;
     private Map<String, Object> patientData;

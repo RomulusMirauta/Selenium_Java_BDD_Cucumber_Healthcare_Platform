@@ -1,4 +1,5 @@
 [
-  { "username": "admin1", "password": "your_password", "role": "admin" },
-  { "username": "user1", "password": "userpass", "role": "user" }
+  { "username": "admin1", "password": "admin194*%&)M", "role": "admin" },
+  { "username": "user_drugs", "password": "user_drugs194*%&)M", "role": "drugs" },
+  { "username": "user_patients", "password": "user_patients194*%&)M", "role": "patients" }
 ]

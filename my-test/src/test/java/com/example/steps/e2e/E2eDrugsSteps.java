@@ -23,7 +23,6 @@ public class E2eDrugsSteps {
         driver = DriverFactory.getDriver();
         if (drugsPage == null) {
             drugsPage = new DrugsPage(driver);
-            drugsPage.gotoPage();
         }
         drugsPage.removeDrugByDetails(name, description, dosage);
     }

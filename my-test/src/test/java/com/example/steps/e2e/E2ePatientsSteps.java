@@ -39,7 +39,10 @@ public class E2ePatientsSteps {
         if (driver == null) {
             throw new IllegalStateException("WebDriver not initialized. Ensure Hooks.createDriver() runs before step execution.");
         }
-        boolean visible = !driver.findElements(By.xpath("//*[contains(@class,'patient-card') and contains(., '" + firstName + " " + lastName + "')]")).isEmpty();
+        String fullName = firstName + " " + lastName;
+        boolean visible = !driver.findElements(By.xpath("//*[contains(@class,'patient-name') and contains(., '" + fullName + "')]"))
+            .isEmpty() || !driver.findElements(By.xpath("//*[contains(@class,'patient-card') and contains(., '" + fullName + "')]"))
+            .isEmpty();
         Assert.assertTrue(visible, "Expected patient card to be visible");
     }
 
@@ -62,7 +65,15 @@ public class E2ePatientsSteps {
         if (driver == null) {
             throw new IllegalStateException("WebDriver not initialized. Ensure Hooks.createDriver() runs before step execution.");
         }
-        boolean exists = !driver.findElements(By.xpath("//*[contains(@class,'patient-card') and contains(., '" + firstName + " " + lastName + "')]")).isEmpty();
+        String fullName = firstName + " " + lastName;
+        By nameLocator = By.xpath("//*[contains(@class,'patient-name') and contains(., '" + fullName + "')]");
+        By cardLocator = By.xpath("//*[contains(@class,'patient-card') and contains(., '" + fullName + "')]");
+        try {
+            new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(10))
+                .until(org.openqa.selenium.support.ui.ExpectedConditions.invisibilityOfElementLocated(nameLocator));
+        } catch (Exception ignored) {
+        }
+        boolean exists = !driver.findElements(nameLocator).isEmpty() || !driver.findElements(cardLocator).isEmpty();
         Assert.assertFalse(exists, "Patient still exists in UI");
     }
 

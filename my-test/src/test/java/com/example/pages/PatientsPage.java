@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class PatientsPage extends BasePage {
-    private final By patientsNav = By.cssSelector(".db-label:has-text('Patients')");
+    private final By patientsNav = By.xpath("//*[contains(normalize-space(.), 'Patients') and (self::a or self::button or contains(@class,'db-label'))]");
     private final By firstNameInput = By.cssSelector("[placeholder='First Name']");
     private final By lastNameInput = By.cssSelector("[placeholder='Last Name']");
     private final By genderInput = By.cssSelector("[placeholder='Gender']");
@@ -37,9 +37,21 @@ public class PatientsPage extends BasePage {
 
     public void removePatientByDetails(String firstName, String lastName) {
         String name = firstName + " " + lastName;
-        List<WebElement> cards = findPatientCardsByName(name);
-        for (WebElement card : cards) {
-            card.findElement(By.xpath(".//button[contains(., 'Remove')]")).click();
+        for (int attempt = 0; attempt < 5; attempt++) {
+            List<WebElement> cards = findPatientCardsByName(name);
+            if (cards.isEmpty()) {
+                return;
+            }
+            WebElement card = cards.get(0);
+            try {
+                WebElement removeButton = card.findElement(By.xpath(".//button[contains(., 'Remove')]"));
+                removeButton.click();
+                acceptAlertIfPresent();
+                new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(5))
+                        .until(org.openqa.selenium.support.ui.ExpectedConditions.stalenessOf(card));
+            } catch (org.openqa.selenium.StaleElementReferenceException ignored) {
+                // element already detached
+            }
         }
     }
 }

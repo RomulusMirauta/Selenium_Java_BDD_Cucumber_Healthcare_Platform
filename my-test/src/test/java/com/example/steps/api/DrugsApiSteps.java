@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class DrugsApiSteps {
     private final SharedContext context;
-    private final DrugsService service = new DrugsService(Config.BASE_URL);
+    private final DrugsService service = new DrugsService(Config.API_BASE_URL);
     private Map<String, Object> drugData;
     private Object drugId;
     private Response addResponse;

@@ -33,4 +33,14 @@ public class BasePage {
     public String getText(By locator) {
         return waitForVisible(locator).getText();
     }
+
+    protected void acceptAlertIfPresent() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+            wait.until(ExpectedConditions.alertIsPresent());
+            driver.switchTo().alert().accept();
+        } catch (Exception ignored) {
+            // No alert present within timeout; ignore.
+        }
+    }
 }

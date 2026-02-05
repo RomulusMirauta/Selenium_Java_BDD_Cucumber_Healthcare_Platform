@@ -20,12 +20,6 @@ public class DriverFactory {
     public static void createDriver() {
         if (THREAD_DRIVER.get() == null) {
             var wdm = WebDriverManager.chromedriver();
-            // Try to clear any cached driver artifacts so the latest compatible driver is fetched.
-            try {
-                wdm.clearDriverCache();
-            } catch (Exception ignored) {
-                // Some implementations may not support clearing the cache; ignore.
-            }
             // Allow CI / local override of the driver binary via CHROME_DRIVER_PATH or driver version via CHROME_DRIVER_VERSION
             String pinnedPathEnv = System.getenv("CHROME_DRIVER_PATH");
             String pinnedVersion = System.getenv("CHROME_DRIVER_VERSION");
@@ -48,11 +42,10 @@ public class DriverFactory {
                     wdm.driverVersion(pinnedVersion).forceDownload().setup();
                 } catch (Exception t) {
             log.warn("Failed to fetch pinned ChromeDriver version {}: {}", pinnedVersion, t.getMessage());
-            log.warn("Falling back to the WebDriverManager auto-detection behavior.");
-                    wdm.setup();
+                    log.warn("Falling back to Selenium Manager auto-detection.");
                 }
-            } else {
-                wdm.setup();
+            } else if (!driverSetByPinnedPath) {
+                log.info("No pinned ChromeDriver provided. Using Selenium Manager for driver resolution.");
             }
             String driverPath = System.getProperty("webdriver.chrome.driver");
         log.info("WebDriverManager webdriver.chrome.driver = {}", driverPath);

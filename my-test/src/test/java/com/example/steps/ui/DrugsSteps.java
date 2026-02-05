@@ -6,7 +6,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import java.time.Duration;
 
 public class DrugsSteps {
     private WebDriver driver;
@@ -34,7 +37,15 @@ public class DrugsSteps {
         if (driver == null) {
             throw new IllegalStateException("WebDriver not initialized. Ensure Hooks.createDriver() runs before step execution.");
         }
-        boolean visible = !driver.findElements(By.xpath("//*[contains(@class,'drug-card') and contains(., '" + currentDrugName + "')]")).isEmpty();
+        By locator = By.xpath("//*[contains(@class,'drugs-list')]//*[contains(@class,'drug-name') and contains(., '" + currentDrugName + "')]");
+        boolean visible;
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(10))
+                    .until(ExpectedConditions.presenceOfElementLocated(locator));
+            visible = true;
+        } catch (Exception e) {
+            visible = false;
+        }
         Assert.assertTrue(visible, "Expected drug card to be visible for: " + currentDrugName);
     }
 
@@ -52,12 +63,21 @@ public class DrugsSteps {
     }
 
     @Then("the drug is no longer visible")
+    @Then("the drug is not visible in the UI")
     public void drug_not_visible() {
         driver = DriverFactory.getDriver();
         if (driver == null) {
             throw new IllegalStateException("WebDriver not initialized. Ensure Hooks.createDriver() runs before step execution.");
         }
-        boolean exists = !driver.findElements(By.xpath("//*[contains(@class,'drug-card') and contains(., '" + currentDrugName + "')]")).isEmpty();
+        By locator = By.xpath("//*[contains(@class,'drugs-list')]//*[contains(@class,'drug-name') and contains(., '" + currentDrugName + "')]");
+        boolean exists;
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(10))
+                    .until(ExpectedConditions.invisibilityOfElementLocated(locator));
+            exists = false;
+        } catch (Exception e) {
+            exists = !driver.findElements(locator).isEmpty();
+        }
         Assert.assertFalse(exists, "Drug still exists: " + currentDrugName);
     }
 }
