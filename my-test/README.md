@@ -30,6 +30,9 @@ For Maven, you can also use the `${project.basedir}` property in your `pom.xml` 
 ## Common commands
 
 ```bash
+# Go to project directory:
+cd my-test
+
 # Build and download dependencies (skip tests):
 mvn -DskipTests install
 
