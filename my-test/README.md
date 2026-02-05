@@ -15,6 +15,12 @@ This Maven project contains Java conversions of the Playwright tests made for [H
 
 ## Prerequisites
 
+- Java 17+ (project is set to release 17)
+- Maven 3.9+ (or use the included Maven wrapper/scripts)
+- Google Chrome installed (for UI tests)
+- Application under test running at `BASE_URL` *(default `http://localhost:3001/`)*
+- Optional: Microsoft SQL Server accessible for DB checks (set `DB_USER`, `DB_PASSWORD`, `DB_SERVER`, `DB_NAME`)
+
 ## Setting JDK Path Dynamically
 
 To set the JDK path for this project dynamically (without hardcoding), use the following command in your terminal (Windows PowerShell):
@@ -99,6 +105,6 @@ If you're seeing `This version of ChromeDriver only supports Chrome version 114`
 
 ## Next steps / Improvements
 
-- Add the remainder of Playwright tests if any were missed
+- Add the remainder of Playwright tests if any were missed or when new ones are added
 - Add utility classes to centralize locators and wait behaviors
 - Add reporting (Allure, etc.) and build pipeline integration
