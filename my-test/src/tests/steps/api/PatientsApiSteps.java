@@ -1,6 +1,6 @@
 package com.example.steps.api;
 
-import com.example.api.PatientsService;
+import com.api.PatientsService;
 import com.example.config.Config;
 import com.example.steps.common.SharedContext;
 import io.cucumber.java.en.Then;
