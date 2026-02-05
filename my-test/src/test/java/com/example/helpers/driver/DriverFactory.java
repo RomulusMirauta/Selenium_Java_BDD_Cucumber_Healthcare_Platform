@@ -54,6 +54,11 @@ public class DriverFactory {
             String headless = System.getProperty("HEADLESS", System.getenv().getOrDefault("HEADLESS", "false"));
             if ("true".equalsIgnoreCase(headless)) {
                 options.addArguments("--headless=new");
+            } else {
+                String fullscreen = System.getProperty("FULLSCREEN", System.getenv().getOrDefault("FULLSCREEN", "false"));
+                if ("true".equalsIgnoreCase(fullscreen)) {
+                    options.addArguments("--start-maximized");
+                }
             }
             THREAD_DRIVER.set(new ChromeDriver(options));
         }
