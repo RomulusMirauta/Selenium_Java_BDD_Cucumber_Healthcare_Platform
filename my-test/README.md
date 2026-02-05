@@ -1,6 +1,6 @@
-# Converted Tests (Playwright -> Java + Selenium + POM + TestNG + Cucumber + RestAssured
+# Converted Tests (Playwright + JS/TS -> Java + Selenium + POM + TestNG + Cucumber + RestAssured)
 
-This Maven project contains Java conversions of the Playwright tests that were previously located under `testsPlaywright`.
+This Maven project contains Java conversions of the Playwright tests made for [Healthcare_Platform_SampleTestObject1](https://github.com/RomulusMirauta/Healthcare_Platform_SampleTestObject1).
 
 ## What was created
 
@@ -50,6 +50,9 @@ mvn -Dtest=FirstTest test
 
 - Many tests expect a running application at `BASE_URL` (default `http://localhost:3001/`). Configure with `-DBASE_URL=http://yourhost:port/` to override.
 - For Selenium, set environment variable `HEADLESS=true` for headless runs.
+- For demos, set `FULLSCREEN=true` to start Chrome maximized (non-headless only).
+- To slow down UI actions for recording, set `DEMO_DELAY_MS` (milliseconds) to pause before each click/fill/text read.
+- To add a pause between scenarios/tests, set `TEST_DELAY_MS` (milliseconds).
 - If you want DB checks to work, install and configure the SQL Server driver and set `DB_USER`, `DB_PASSWORD`, `DB_SERVER`, and `DB_NAME` environment variables.
 
 ## Chrome / ChromeDriver mismatch notes
