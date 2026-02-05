@@ -1,9 +1,7 @@
 package com.example.steps.e2e;
 
-import com.example.helpers.config.Config;
 import com.example.helpers.driver.DriverFactory;
 import com.example.helpers.pages.PatientsPage;
-import com.example.helpers.pages.LoginPage;
 import com.example.helpers.utils.DBUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,11 +21,15 @@ public class E2ePatientsSteps {
 
     @When("the user navigates to the Patients page and adds a patient with firstName {string} lastName {string} dob {string} gender {string} address {string}")
     public void add_patient_ui(String firstName, String lastName, String dob, String gender, String address) {
+        if (firstName.contains("<RANDOM>")) {
+            firstName = firstName.replace("<RANDOM>", String.valueOf(System.currentTimeMillis()));
+        }
+        if (lastName.contains("<RANDOM>")) {
+            lastName = lastName.replace("<RANDOM>", String.valueOf(System.currentTimeMillis()));
+        }
         this.firstName = firstName;
         this.lastName = lastName;
         driver = DriverFactory.getDriver();
-        LoginPage loginPage = new LoginPage(driver, Config.BASE_URL);
-        loginPage.gotoPage("/");
         patientsPage = new PatientsPage(driver);
         patientsPage.gotoPage();
         patientsPage.addPatient(firstName, lastName, dob, gender, address);
@@ -40,9 +42,14 @@ public class E2ePatientsSteps {
             throw new IllegalStateException("WebDriver not initialized. Ensure Hooks.createDriver() runs before step execution.");
         }
         String fullName = firstName + " " + lastName;
-        boolean visible = !driver.findElements(By.xpath("//*[contains(@class,'patient-name') and contains(., '" + fullName + "')]"))
-            .isEmpty() || !driver.findElements(By.xpath("//*[contains(@class,'patient-card') and contains(., '" + fullName + "')]"))
-            .isEmpty();
+        By nameLocator = By.xpath("//*[contains(@class,'patient-name') and contains(., '" + fullName + "')]");
+        By cardLocator = By.xpath("//*[contains(@class,'patient-card') and contains(., '" + fullName + "')]");
+        try {
+            new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(10))
+                .until(d -> !d.findElements(nameLocator).isEmpty() || !d.findElements(cardLocator).isEmpty());
+        } catch (Exception ignored) {
+        }
+        boolean visible = !driver.findElements(nameLocator).isEmpty() || !driver.findElements(cardLocator).isEmpty();
         Assert.assertTrue(visible, "Expected patient card to be visible");
     }
 
@@ -52,11 +59,21 @@ public class E2ePatientsSteps {
         if (driver == null) {
             throw new IllegalStateException("WebDriver not initialized. Ensure Hooks.createDriver() runs before step execution.");
         }
+        String resolvedFirstName = firstName;
+        String resolvedLastName = lastName;
+        if (this.firstName != null && this.lastName != null) {
+            boolean firstMatches = this.firstName.equals(firstName) || this.firstName.startsWith(firstName) || firstName.contains("<RANDOM>");
+            boolean lastMatches = this.lastName.equals(lastName) || this.lastName.startsWith(lastName) || lastName.contains("<RANDOM>");
+            if (firstMatches && lastMatches) {
+                resolvedFirstName = this.firstName;
+                resolvedLastName = this.lastName;
+            }
+        }
         if (patientsPage == null) {
             patientsPage = new PatientsPage(driver);
             patientsPage.gotoPage();
         }
-        patientsPage.removePatientByDetails(firstName, lastName);
+        patientsPage.removePatientByDetails(resolvedFirstName, resolvedLastName);
     }
 
     @Then("the patient is not visible in the UI")
