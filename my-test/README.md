@@ -1,4 +1,4 @@
-# Converted Tests (Playwright + JS/TS -> Java + Selenium + POM + TestNG + Cucumber + RestAssured)
+# Converted Tests (Playwright + JS/TS -> Java + Selenium + POM + TestNG + BDD-Cucumber + RestAssured)
 
 This Maven project contains Java conversions of the Playwright tests made for [Healthcare_Platform_SampleTestObject1](https://github.com/RomulusMirauta/Healthcare_Platform_SampleTestObject1).
 
@@ -36,20 +36,23 @@ For Maven, you can also use the `${project.basedir}` property in your `pom.xml` 
 ## Common commands
 
 ```bash
-# Go to project directory:
+# Go to project's main directory
 cd my-test
 
-# Build and download dependencies (skip tests):
+# Build and download dependencies (skip tests)
 mvn -DskipTests install
 
-# Run all tests (UI features will require the app and possibly a display environment or headless enabled):
+# Run all tests (UI features will require the app backend to be running and possibly a display environment, or headless enabled)
 mvn test
 
-# Run only Cucumber features using TestNG runner
+# Run only Cucumber (BDD) features using TestNG runner
 mvn "-Dtest=com.example.runners.CucumberTestNGRunner" test
 
 # Run a specific feature or test
 mvn -Dtest=FirstTest test
+
+# Run all tests, non-headless, fullscreen, with specific environment variables and delays (mid-testing and in-between tests; for recording DEMOs)
+Set-Location ".\my-test"; $env:BASE_URL = "http://localhost:3001/index.html"; $env:FULLSCREEN = "true"; $env:DEMO_DELAY_MS = "500"; $env:TEST_DELAY_MS = "1500"; $env:PATH = ($env:PATH -split ';' | Where-Object { $_ -and $_ -ne '.\selenium\drivers\chromedriver' }) -join ';'; $env:PATH = ".\maven\apache-maven-3.9.11\bin;" + $env:PATH; mvn test
 ```
 
 ## Notes
