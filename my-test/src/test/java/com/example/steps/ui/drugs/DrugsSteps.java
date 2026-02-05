@@ -1,4 +1,4 @@
-package com.example.steps.ui;
+package com.example.steps.ui.drugs;
 
 import com.example.helpers.driver.DriverFactory;
 import com.example.helpers.pages.DrugsPage;

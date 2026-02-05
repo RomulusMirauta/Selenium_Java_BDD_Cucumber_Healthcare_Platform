@@ -1,4 +1,4 @@
-package com.example.steps.ui;
+package com.example.steps.ui.login_access;
 
 import com.example.helpers.driver.DriverFactory;
 import io.cucumber.java.en.Then;

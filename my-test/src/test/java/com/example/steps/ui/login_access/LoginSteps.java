@@ -1,4 +1,4 @@
-package com.example.steps.ui;
+package com.example.steps.ui.login_access;
 
 import com.example.helpers.config.Config;
 import com.example.helpers.driver.DriverFactory;
