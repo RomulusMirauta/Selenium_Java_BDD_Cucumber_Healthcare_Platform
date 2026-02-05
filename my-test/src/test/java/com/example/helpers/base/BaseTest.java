@@ -18,5 +18,24 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         DriverFactory.quitDriver();
+        maybeDelay();
+    }
+
+    private static void maybeDelay() {
+        String raw = System.getProperty("TEST_DELAY_MS", System.getenv().getOrDefault("TEST_DELAY_MS", "0"));
+        long delayMs;
+        try {
+            delayMs = Long.parseLong(raw);
+        } catch (NumberFormatException ignored) {
+            delayMs = 0L;
+        }
+        if (delayMs <= 0) {
+            return;
+        }
+        try {
+            Thread.sleep(delayMs);
+        } catch (InterruptedException ignored) {
+            Thread.currentThread().interrupt();
+        }
     }
 }
