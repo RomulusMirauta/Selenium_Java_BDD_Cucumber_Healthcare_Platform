@@ -20,7 +20,7 @@ public class DrugsStepsTest {
     private WebDriver mockDriver;
 
     @BeforeMethod
-    @SuppressWarnings({"unchecked","rawtypes"})
+    @SuppressWarnings({"unchecked"})
     public void setUp() throws Exception {
         mockDriver = Mockito.mock(WebDriver.class);
         Field field = DriverFactory.class.getDeclaredField("THREAD_DRIVER");
@@ -30,7 +30,7 @@ public class DrugsStepsTest {
     }
 
     @AfterMethod
-    @SuppressWarnings({"unchecked","rawtypes"})
+    @SuppressWarnings({"unchecked"})
     public void tearDown() throws Exception {
         Field field = DriverFactory.class.getDeclaredField("THREAD_DRIVER");
         field.setAccessible(true);

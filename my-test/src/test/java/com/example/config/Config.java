@@ -1,4 +1,4 @@
-package test.java.com.example.config;
+package com.example.config;
 
 public final class Config {
     public static final String BASE_URL =

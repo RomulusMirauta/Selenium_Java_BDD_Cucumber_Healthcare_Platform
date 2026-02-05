@@ -21,7 +21,8 @@ public class AccessControlStepsTest {
     private WebDriver mockDriver;
 
     @BeforeMethod
-    @SuppressWarnings({"unchecked","rawtypes"})
+    // @SuppressWarnings({"unchecked","rawtypes"})
+    @SuppressWarnings({"unchecked"})
     public void setUp() throws Exception {
         mockDriver = Mockito.mock(WebDriver.class);
 
@@ -33,7 +34,8 @@ public class AccessControlStepsTest {
     }
 
     @AfterMethod
-    @SuppressWarnings({"unchecked","rawtypes"})
+    // @SuppressWarnings({"unchecked","rawtypes"})
+    @SuppressWarnings({"unchecked"})
     public void tearDown() throws Exception {
         // Clear ThreadLocal driver
         Field field = DriverFactory.class.getDeclaredField("THREAD_DRIVER");
