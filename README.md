@@ -19,6 +19,7 @@ This project demonstrates automated UI and API tests for a healthcare platform w
 ### Visual Studio Code: behind-logic example, structure and running tests from command line
 ![Demo 2.1 (Fast)](demos/Demo2.1_Fast_orig.gif) <br>
 
+<br>
 
 > [!NOTE]
 > - This Maven project contains Java conversions of the following project and tests: [Playwright_JavaScript_TypeScript_Healthcare_Platform](https://github.com/RomulusMirauta/Playwright_JavaScript_TypeScript_Healthcare_Platform)
@@ -26,6 +27,7 @@ This project demonstrates automated UI and API tests for a healthcare platform w
 > - This project contains tests created for the following Web App: [Healthcare_Platform_SampleTestObject1](https://github.com/RomulusMirauta/Healthcare_Platform_SampleTestObject1)
 > - It uses Selenium for UI automation, RestAssured for API testing, TestNG as the test framework, and Cucumber for BDD-style features
 
+<br>
 
 ## Project Structure
 
