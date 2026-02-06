@@ -52,7 +52,7 @@ This project demonstrates automated UI and API tests for a healthcare platform w
 
 To set the JDK path for this project dynamically (without hardcoding), use the following command in your terminal (Windows PowerShell):
 
-```powershell
+```ps1
 $env:JAVA_HOME = "$PWD\openJdk-25"
 ```
 
@@ -113,7 +113,11 @@ Set-Location ".\my-test"; $env:BASE_URL = "http://localhost:3001/index.html"; $e
 
 On Windows, verify a local driver binary is valid by running:
 
-- `C:\path\to\chromedriver.exe --version` (PowerShell / cmd)
+- ```ps1
+   # (PowerShell / CMD)
+
+   C:\<path_to>\chromedriver.exe --version
+   ```
 - The output should start with `ChromeDriver` and include the driver version.
 - If the binary reports nothing or errors, it's not a valid chromedriver binary for the current platform.
 
@@ -125,7 +129,7 @@ Remove the folder(s) to force WebDriverManager to download a fresh driver matchi
 
 PowerShell example:
 
-```powershell
+```ps1
 Remove-Item -Recurse -Force $env:USERPROFILE\.cache\selenium\chromedriver\*
 ```
 
