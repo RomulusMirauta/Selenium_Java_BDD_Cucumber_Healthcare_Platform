@@ -1,5 +1,5 @@
 <h1 align="center">
-Sample Test Automation<br>Java + Selenium + POM + TestNG + BDD-Cucumber + RestAssured
+Sample Test Automation<br>Java + Selenium + POM + TestNG + BDD-Cucumber + RestAssured + SQL
 </h1>
 
 <br>
