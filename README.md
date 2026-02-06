@@ -1,8 +1,19 @@
 # Converted Tests (Playwright + JS/TS -> Java + Selenium + POM + TestNG + BDD-Cucumber + RestAssured)
 
 This Maven project contains Java conversions of the Playwright tests made for [Healthcare_Platform_SampleTestObject1](https://github.com/RomulusMirauta/Healthcare_Platform_SampleTestObject1).
+It uses Selenium for UI automation, RestAssured for API testing, TestNG as the test framework, and Cucumber for BDD-style features.
 
-## What was created
+## Demos
+
+### Headed / Headful Testing on Google Chrome
+![Demo 1.1 (Fast)](demos/Demo1.1_Fast_orig.gif) <br>
+![Demo 1.2 (Slow)](demos/Demo1.2_Slow_orig.gif) <br><br>
+
+### Visual Studio Code: behind-logic example, structure and running tests from command line
+![Demo 2.1 (Fast)](demos/Demo2.1_Fast_orig.gif) <br>
+![Demo 2.2 (Slow)](demos/Demo2.2_Slow_orig.gif) <br>
+
+## Project Structure
 
 - Page Objects (Selenium) under `src/test/java/com/example/pages` (Login, Drugs, Patients)
 - API service classes under `src/test/java/com/example/api` (AuthService, DrugsService, PatientsService)
