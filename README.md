@@ -31,10 +31,15 @@ VIII. &nbsp; [Next steps / Improvements](#next-steps--improvements) <br>
 
 ## Demos
 
-### Headed Testing on Google Chrome
+### Automated Tests
+*(Headed Testing on Google Chrome)* <br>
+
 ![Demo 1.1 (Fast)](demos/Demo1.1_Fast_orig.gi) <br><br>
 
-### Visual Studio Code: behind-logic example, structure and running tests from command line
+
+### Visual Studio Code
+*(Behind-logic example, structure and running tests from command line)* <br>
+
 ![Demo 2.1 (Fast)](demos/Demo2.1_Fast_orig.gi) <br>
 
 <br>
