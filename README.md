@@ -142,6 +142,8 @@ Set-Location ".\my-test"; $env:BASE_URL = "http://localhost:3001/index.html"; $e
       ```
    - In CI, pin the driver and use headless mode (set `HEADLESS=true`).
 
+<br>
+
 ### VII. a. Validating a pinned `chromedriver.exe`
 
 On Windows, verify a local driver binary is valid by running:
@@ -154,6 +156,8 @@ On Windows, verify a local driver binary is valid by running:
 - The output should start with `ChromeDriver` and include the driver version.
 - If the binary reports nothing or errors, it's not a valid chromedriver binary for the current platform.
 
+<br>
+
 ### VII. b. Clearing WebDriverManager cache (force a fresh driver download)
 
 WebDriverManager caches drivers under the user cache directory, e.g. `%USERPROFILE%\.cache\selenium\chromedriver\win32\` on Windows.
@@ -165,6 +169,8 @@ Remove the folder(s) to force WebDriverManager to download a fresh driver matchi
 
 Remove-Item -Recurse -Force $env:USERPROFILE\.cache\selenium\chromedriver\*
 ```
+
+<br>
 
 ### VII. c. Troubleshooting tips
 
