@@ -5,7 +5,7 @@ It uses Selenium for UI automation, RestAssured for API testing, TestNG as the t
 
 ## Demos
 
-### Headed / Headful Testing on Google Chrome
+### Headed Testing on Google Chrome
 ![Demo 1.1 (Fast)](demos/Demo1.1_Fast_orig.gif) <br>
 ![Demo 1.2 (Slow)](demos/Demo1.2_Slow_orig.gif) <br><br>
 
