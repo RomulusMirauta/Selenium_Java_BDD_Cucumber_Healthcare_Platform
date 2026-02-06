@@ -14,18 +14,18 @@ This project demonstrates automated UI and API tests for a healthcare platform w
 ## Table of Contents
 
 I. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Demos](#demos) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. a. [Headed Testing on Google Chrome](#headed-testing-on-google-chrome) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. b. [Visual Studio Code: behind-logic example, structure and running tests from command line](#visual-studio-code-behind-logic-example-structure-and-running-tests-from-command-line) <br>
-II. &nbsp;&nbsp;&nbsp;&nbsp; [Project Structure](#project-structure) <br>
-III. &nbsp;&nbsp;&nbsp; [Prerequisites](#prerequisites) <br>
-IV. &nbsp;&nbsp;&nbsp; [Setting JDK Path Dynamically](#setting-jdk-path-dynamically) <br>
-V. &nbsp;&nbsp;&nbsp;&nbsp; [Common commands](#common-commands) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. a. [Automated Tests](#i-a-automated-tests) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. b. [Visual Studio Code & CLI](#i-b-visual-studio-code--cli) <br>
+II. &nbsp;&nbsp;&nbsp;&nbsp; [Project Structure](#ii-project-structure) <br>
+III. &nbsp;&nbsp;&nbsp; [Prerequisites](#iii-prerequisites) <br>
+IV. &nbsp;&nbsp;&nbsp; [Setting JDK Path Dynamically](#iv-setting-jdk-path-dynamically) <br>
+V. &nbsp;&nbsp;&nbsp;&nbsp; [Common Commands](#v-common-commands) <br>
 VI. &nbsp;&nbsp;&nbsp; [Notes](#notes) <br>
-VII. &nbsp;&nbsp; [Chrome / ChromeDriver mismatch notes](#chrome--chromedriver-mismatch-notes) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. a. [Validating a pinned chromedriver.exe](#validating-a-pinned-chromedriverexe) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. b. [Clearing WebDriverManager cache (force a fresh driver download)](#clearing-webdrivermanager-cache-force-a-fresh-driver-download) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. c. [Troubleshooting tips](#troubleshooting-tips) <br>
-VIII. &nbsp; [Next steps / Improvements](#next-steps--improvements) <br>
+VII. &nbsp;&nbsp; [Chrome / ChromeDriver Mismatch Notes](#vii-chrome--chromedriver-mismatch-notes) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. a. [Validating a pinned chromedriver.exe](#vii-a-validating-a-pinned-chromedriverexe) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. b. [Clearing WebDriverManager cache (force a fresh driver download)](#vii-b-clearing-webdrivermanager-cache-force-a-fresh-driver-download) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. c. [Troubleshooting tips](#vii-c-troubleshooting-tips) <br>
+VIII. &nbsp; [Next steps / Improvements](#viii-next-steps--improvements) <br>
 
 <br>
 
@@ -37,7 +37,7 @@ VIII. &nbsp; [Next steps / Improvements](#next-steps--improvements) <br>
 ![Demo 1.1 (Fast)](demos/Demo1.1_Fast_orig.gi) <br><br>
 
 
-### I. b. Visual Studio Code
+### I. b. Visual Studio Code & CLI
 *(Behind-logic example, structure and running tests from command line)* <br>
 
 ![Demo 2.1 (Fast)](demos/Demo2.1_Fast_orig.gi) <br>
@@ -83,7 +83,7 @@ This sets JAVA_HOME to the `openJdk-25` folder inside your current project direc
 
 For Maven, you can also use the `${project.basedir}` property in your `pom.xml` to refer to the project root dynamically.
 
-## V. Common commands
+## V. Common Commands
 
 ```bash
 # Go to project's main directory
@@ -114,7 +114,7 @@ Set-Location ".\my-test"; $env:BASE_URL = "http://localhost:3001/index.html"; $e
 - To add a pause between scenarios/tests, set `TEST_DELAY_MS` (milliseconds).
 - If you want DB checks to work, install and configure the SQL Server driver and set `DB_USER`, `DB_PASSWORD`, `DB_SERVER`, and `DB_NAME` environment variables.
 
-## VII. Chrome / ChromeDriver mismatch notes
+## VII. Chrome / ChromeDriver Mismatch Notes
 
 - ChromeDriver must match the installed Chrome browser major version. If you get errors like "This version of ChromeDriver only supports Chrome version 114", it means the local driver doesn't match your installed Chrome.
 
