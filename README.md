@@ -13,14 +13,14 @@ This project demonstrates automated UI and API tests for a healthcare platform w
 
 ## Table of Contents
 
-I. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Demos](#demos) <br>
+I. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Demos](#i-demos) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. a. [Automated Tests](#i-a-automated-tests) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. b. [Visual Studio Code & CLI](#i-b-visual-studio-code--cli) <br>
 II. &nbsp;&nbsp;&nbsp;&nbsp; [Project Structure](#ii-project-structure) <br>
 III. &nbsp;&nbsp;&nbsp; [Prerequisites](#iii-prerequisites) <br>
 IV. &nbsp;&nbsp;&nbsp; [Setting JDK Path Dynamically](#iv-setting-jdk-path-dynamically) <br>
 V. &nbsp;&nbsp;&nbsp;&nbsp; [Common Commands](#v-common-commands) <br>
-VI. &nbsp;&nbsp;&nbsp; [Notes](#notes) <br>
+VI. &nbsp;&nbsp;&nbsp; [Notes](#vi-notes) <br>
 VII. &nbsp;&nbsp; [Chrome / ChromeDriver Mismatch Notes](#vii-chrome--chromedriver-mismatch-notes) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. a. [Validating a pinned chromedriver.exe](#vii-a-validating-a-pinned-chromedriverexe) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. b. [Clearing WebDriverManager cache (force a fresh driver download)](#vii-b-clearing-webdrivermanager-cache-force-a-fresh-driver-download) <br>
