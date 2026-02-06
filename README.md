@@ -34,13 +34,13 @@ VIII. &nbsp; [Next steps / Improvements](#viii-next-steps--improvements) <br>
 ### I. a. Automated Tests
 *(Headed Testing on Google Chrome)* <br>
 
-![Demo 1.1 (Fast)](demos/Demo1.1_Fast_orig.gi) <br><br>
+![Demo 1.1 (Fast)](demos/Demo1.1_Fast_orig.gif) <br><br>
 
 
 ### I. b. Visual Studio Code & CLI
 *(Behind-logic example, structure and running tests from command line)* <br>
 
-![Demo 2.1 (Fast)](demos/Demo2.1_Fast_orig.gi) <br>
+![Demo 2.1 (Fast)](demos/Demo2.1_Fast_orig.gif) <br>
 
 <br>
 
