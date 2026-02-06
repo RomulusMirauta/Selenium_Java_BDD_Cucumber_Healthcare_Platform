@@ -1,7 +1,23 @@
-# Converted Tests (Playwright + JS/TS -> Java + Selenium + POM + TestNG + BDD-Cucumber + RestAssured)
+<h1 align="center">
+Sample Test Automation<br>Java + Selenium + POM + TestNG + BDD-Cucumber + RestAssured
+</h1>
 
-This Maven project contains Java conversions of the Playwright tests made for [Healthcare_Platform_SampleTestObject1](https://github.com/RomulusMirauta/Healthcare_Platform_SampleTestObject1).
+<br>
+
+<p align="center"><i>
+A sample healthcare test automation project using Selenium for UI, API and End-to-End testing, with SQL Server integration for database validations.<br><br>
+This project demonstrates automated UI and API tests for a healthcare platform with user authentication, role-based access, and management of patients and drugs.
+</i></p>
+
+<br><br>
+
+*The tests have been converted from this project: [Playwright_JavaScript_TypeScript_Healthcare_Platform](https://github.com/RomulusMirauta/Playwright_JavaScript_TypeScript_Healthcare_Platform)* <br>
+*(Playwright + JS/TS -> Selenium + Java + POM + TestNG + BDD-Cucumber + RestAssured)*
+
+This Maven project contains Java conversions of the Playwright tests made for the following Web App: [Healthcare_Platform_SampleTestObject1](https://github.com/RomulusMirauta/Healthcare_Platform_SampleTestObject1). <br>
 It uses Selenium for UI automation, RestAssured for API testing, TestNG as the test framework, and Cucumber for BDD-style features.
+
+<br><br>
 
 ## Demos
 
