@@ -63,6 +63,8 @@ VIII. &nbsp; [Next steps / Improvements](#viii-next-steps--improvements) <br>
 - A simple `DriverFactory` for Selenium / ChromeDriver management
 - `DBUtils` helper to run DB validations (optional)
 
+<br>
+
 ## III. Prerequisites
 
 - Java 17+ (project is set to release 17)
@@ -70,6 +72,8 @@ VIII. &nbsp; [Next steps / Improvements](#viii-next-steps--improvements) <br>
 - Google Chrome installed (for UI tests)
 - Application under test running at `BASE_URL` *(default `http://localhost:3001/`)*
 - Optional: Microsoft SQL Server accessible for DB checks (set `DB_USER`, `DB_PASSWORD`, `DB_SERVER`, `DB_NAME`)
+
+<br>
 
 ## IV. Setting JDK Path Dynamically
 
@@ -82,6 +86,8 @@ $env:JAVA_HOME = "$PWD\openJdk-25"
 This sets JAVA_HOME to the `openJdk-25` folder inside your current project directory. You can add this command to your build or test scripts for convenience.
 
 For Maven, you can also use the `${project.basedir}` property in your `pom.xml` to refer to the project root dynamically.
+
+<br>
 
 ## V. Common Commands
 
@@ -105,6 +111,8 @@ mvn -Dtest=FirstTest test
 Set-Location ".\my-test"; $env:BASE_URL = "http://localhost:3001/index.html"; $env:FULLSCREEN = "true"; $env:DEMO_DELAY_MS = "500"; $env:TEST_DELAY_MS = "1500"; $env:PATH = ($env:PATH -split ';' | Where-Object { $_ -and $_ -ne '.\selenium\drivers\chromedriver' }) -join ';'; $env:PATH = ".\maven\apache-maven-3.9.11\bin;" + $env:PATH; mvn test
 ```
 
+<br>
+
 ## VI. Notes
 
 - Many tests expect a running application at `BASE_URL` (default `http://localhost:3001/`). Configure with `-DBASE_URL=http://yourhost:port/` to override.
@@ -113,6 +121,8 @@ Set-Location ".\my-test"; $env:BASE_URL = "http://localhost:3001/index.html"; $e
 - To slow down UI actions for recording, set `DEMO_DELAY_MS` (milliseconds) to pause before each click/fill/text read.
 - To add a pause between scenarios/tests, set `TEST_DELAY_MS` (milliseconds).
 - If you want DB checks to work, install and configure the SQL Server driver and set `DB_USER`, `DB_PASSWORD`, `DB_SERVER`, and `DB_NAME` environment variables.
+
+<br>
 
 ## VII. Chrome / ChromeDriver Mismatch Notes
 
@@ -165,6 +175,8 @@ If you're seeing `This version of ChromeDriver only supports Chrome version 114`
    2. If you set `CHROME_DRIVER_VERSION`, use the full version string (e.g., `142.0.7444.176`) then clear the WDM cache before running again.
 
    3. Avoid storing mismatched drivers on PATH that override WebDriverManager behavior.
+
+<br>
 
 ## VIII. Next steps / Improvements
 
