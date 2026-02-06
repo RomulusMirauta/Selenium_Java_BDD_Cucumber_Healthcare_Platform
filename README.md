@@ -98,9 +98,15 @@ Set-Location ".\my-test"; $env:BASE_URL = "http://localhost:3001/index.html"; $e
 - Quick fixes:
    - Remove older `chromedriver.exe` from your PATH (for example, `d:\learn\java\selenium jars and drivers\drivers`), so WebDriverManager can download the correct driver.
    - Alternatively, set an explicit `CHROME_DRIVER_PATH` env var pointing to a chromedriver executable that matches your browser version:
-      - PowerShell: `$env:CHROME_DRIVER_PATH = 'C:\path\to\chromedriver.exe'` then run `mvn -Dtest=com.example.runners.CucumberTestNGRunner test`
+      - PowerShell: 
+      ```ps1
+      $env:CHROME_DRIVER_PATH = 'C:\path\to\chromedriver.exe'` then run `mvn -Dtest=com.example.runners.CucumberTestNGRunner test
+      ```
    - Or set the driver version to download with `CHROME_DRIVER_VERSION` env var (example `142.0.7444.176`):
-      - PowerShell: `$env:CHROME_DRIVER_VERSION = '142.0.7444.176'` then run `mvn -Dtest=com.example.runners.CucumberTestNGRunner test`
+      - PowerShell: 
+      ```ps1
+      $env:CHROME_DRIVER_VERSION = '142.0.7444.176'` then run `mvn -Dtest=com.example.runners.CucumberTestNGRunner test
+      ```
    - In CI, pin the driver and use headless mode (set `HEADLESS=true`).
 
 ### Validating a pinned `chromedriver.exe`
