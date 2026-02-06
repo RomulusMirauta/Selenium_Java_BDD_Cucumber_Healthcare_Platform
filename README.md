@@ -22,12 +22,10 @@ It uses Selenium for UI automation, RestAssured for API testing, TestNG as the t
 ## Demos
 
 ### Headed Testing on Google Chrome
-![Demo 1.1 (Fast)](demos/Demo1.1_Fast_orig.gif) <br>
-![Demo 1.2 (Slow)](demos/Demo1.2_Slow_orig.gif) <br><br>
+![Demo 1.1 (Fast)](demos/Demo1.1_Fast_orig.gif) <br><br>
 
 ### Visual Studio Code: behind-logic example, structure and running tests from command line
 ![Demo 2.1 (Fast)](demos/Demo2.1_Fast_orig.gif) <br>
-![Demo 2.2 (Slow)](demos/Demo2.2_Slow_orig.gif) <br>
 
 ## Project Structure
 
