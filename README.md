@@ -29,15 +29,15 @@ VIII. &nbsp; [Next steps / Improvements](#next-steps--improvements) <br>
 
 <br>
 
-## Demos
+## I. Demos
 
-### Automated Tests
+### I. a. Automated Tests
 *(Headed Testing on Google Chrome)* <br>
 
 ![Demo 1.1 (Fast)](demos/Demo1.1_Fast_orig.gi) <br><br>
 
 
-### Visual Studio Code
+### I. b. Visual Studio Code
 *(Behind-logic example, structure and running tests from command line)* <br>
 
 ![Demo 2.1 (Fast)](demos/Demo2.1_Fast_orig.gi) <br>
@@ -52,7 +52,7 @@ VIII. &nbsp; [Next steps / Improvements](#next-steps--improvements) <br>
 
 <br>
 
-## Project Structure
+## II. Project Structure
 
 - Page Objects (Selenium) under `src/test/java/com/example/pages` (Login, Drugs, Patients)
 - API service classes under `src/test/java/com/example/api` (AuthService, DrugsService, PatientsService)
@@ -63,7 +63,7 @@ VIII. &nbsp; [Next steps / Improvements](#next-steps--improvements) <br>
 - A simple `DriverFactory` for Selenium / ChromeDriver management
 - `DBUtils` helper to run DB validations (optional)
 
-## Prerequisites
+## III. Prerequisites
 
 - Java 17+ (project is set to release 17)
 - Maven 3.9+ (or use the included Maven wrapper/scripts)
@@ -71,7 +71,7 @@ VIII. &nbsp; [Next steps / Improvements](#next-steps--improvements) <br>
 - Application under test running at `BASE_URL` *(default `http://localhost:3001/`)*
 - Optional: Microsoft SQL Server accessible for DB checks (set `DB_USER`, `DB_PASSWORD`, `DB_SERVER`, `DB_NAME`)
 
-## Setting JDK Path Dynamically
+## IV. Setting JDK Path Dynamically
 
 To set the JDK path for this project dynamically (without hardcoding), use the following command in your terminal (Windows PowerShell):
 
@@ -83,7 +83,7 @@ This sets JAVA_HOME to the `openJdk-25` folder inside your current project direc
 
 For Maven, you can also use the `${project.basedir}` property in your `pom.xml` to refer to the project root dynamically.
 
-## Common commands
+## V. Common commands
 
 ```bash
 # Go to project's main directory
@@ -105,7 +105,7 @@ mvn -Dtest=FirstTest test
 Set-Location ".\my-test"; $env:BASE_URL = "http://localhost:3001/index.html"; $env:FULLSCREEN = "true"; $env:DEMO_DELAY_MS = "500"; $env:TEST_DELAY_MS = "1500"; $env:PATH = ($env:PATH -split ';' | Where-Object { $_ -and $_ -ne '.\selenium\drivers\chromedriver' }) -join ';'; $env:PATH = ".\maven\apache-maven-3.9.11\bin;" + $env:PATH; mvn test
 ```
 
-## Notes
+## VI. Notes
 
 - Many tests expect a running application at `BASE_URL` (default `http://localhost:3001/`). Configure with `-DBASE_URL=http://yourhost:port/` to override.
 - For Selenium, set environment variable `HEADLESS=true` for headless runs.
@@ -114,7 +114,7 @@ Set-Location ".\my-test"; $env:BASE_URL = "http://localhost:3001/index.html"; $e
 - To add a pause between scenarios/tests, set `TEST_DELAY_MS` (milliseconds).
 - If you want DB checks to work, install and configure the SQL Server driver and set `DB_USER`, `DB_PASSWORD`, `DB_SERVER`, and `DB_NAME` environment variables.
 
-## Chrome / ChromeDriver mismatch notes
+## VII. Chrome / ChromeDriver mismatch notes
 
 - ChromeDriver must match the installed Chrome browser major version. If you get errors like "This version of ChromeDriver only supports Chrome version 114", it means the local driver doesn't match your installed Chrome.
 
@@ -132,7 +132,7 @@ Set-Location ".\my-test"; $env:BASE_URL = "http://localhost:3001/index.html"; $e
       ```
    - In CI, pin the driver and use headless mode (set `HEADLESS=true`).
 
-### Validating a pinned `chromedriver.exe`
+### VII. a. Validating a pinned `chromedriver.exe`
 
 On Windows, verify a local driver binary is valid by running:
 
@@ -144,19 +144,19 @@ On Windows, verify a local driver binary is valid by running:
 - The output should start with `ChromeDriver` and include the driver version.
 - If the binary reports nothing or errors, it's not a valid chromedriver binary for the current platform.
 
-### Clearing WebDriverManager cache (force a fresh driver download)
+### VII. b. Clearing WebDriverManager cache (force a fresh driver download)
 
 WebDriverManager caches drivers under the user cache directory, e.g. `%USERPROFILE%\.cache\selenium\chromedriver\win32\` on Windows.
 
 Remove the folder(s) to force WebDriverManager to download a fresh driver matching your pinned version or the installed Chrome.
 
-PowerShell example:
-
 ```ps1
+# PowerShell example
+
 Remove-Item -Recurse -Force $env:USERPROFILE\.cache\selenium\chromedriver\*
 ```
 
-### Troubleshooting tips
+### VII. c. Troubleshooting tips
 
 If you're seeing `This version of ChromeDriver only supports Chrome version 114` but your Chrome is v142:
 
@@ -166,7 +166,7 @@ If you're seeing `This version of ChromeDriver only supports Chrome version 114`
 
    3. Avoid storing mismatched drivers on PATH that override WebDriverManager behavior.
 
-## Next steps / Improvements
+## VIII. Next steps / Improvements
 
 - Add the remainder of Playwright tests if any were missed or when new ones are added
 - Add utility classes to centralize locators and wait behaviors
