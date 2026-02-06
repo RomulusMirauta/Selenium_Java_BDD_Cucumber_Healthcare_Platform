@@ -14,17 +14,17 @@ This project demonstrates automated UI and API tests for a healthcare platform w
 ## Table of Contents
 
 I. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Demos](#demos) <br>
-   I. a. [Headed Testing on Google Chrome](#headed-testing-on-google-chrome) <br>
-   I. b. [Visual Studio Code: behind-logic example, structure and running tests from command line](#visual-studio-code-behind-logic-example-structure-and-running-tests-from-command-line) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. a. [Headed Testing on Google Chrome](#headed-testing-on-google-chrome) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. b. [Visual Studio Code: behind-logic example, structure and running tests from command line](#visual-studio-code-behind-logic-example-structure-and-running-tests-from-command-line) <br>
 II. &nbsp;&nbsp;&nbsp;&nbsp; [Project Structure](#project-structure) <br>
 III. &nbsp;&nbsp;&nbsp;&nbsp; [Prerequisites](#prerequisites) <br>
 IV. &nbsp;&nbsp;&nbsp;&nbsp; [Setting JDK Path Dynamically](#setting-jdk-path-dynamically) <br>
 V. &nbsp;&nbsp;&nbsp;&nbsp; [Common commands](#common-commands) <br>
 VI. &nbsp;&nbsp;&nbsp;&nbsp; [Notes](#notes) <br>
 VII. &nbsp;&nbsp;&nbsp;&nbsp; [Chrome / ChromeDriver mismatch notes](#chrome--chromedriver-mismatch-notes) <br>
-&nbsp;&nbsp;&nbsp;&nbsp; VII. a. [Validating a pinned chromedriver.exe](#validating-a-pinned-chromedriverexe) <br>
-&nbsp;&nbsp;&nbsp;&nbsp; VII. b. [Clearing WebDriverManager cache (force a fresh driver download)](#clearing-webdrivermanager-cache-force-a-fresh-driver-download) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;VII. c. [Troubleshooting tips](#troubleshooting-tips) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. a. [Validating a pinned chromedriver.exe](#validating-a-pinned-chromedriverexe) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. b. [Clearing WebDriverManager cache (force a fresh driver download)](#clearing-webdrivermanager-cache-force-a-fresh-driver-download) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VII. c. [Troubleshooting tips](#troubleshooting-tips) <br>
 VIII. &nbsp;&nbsp;&nbsp;&nbsp; [Next steps / Improvements](#next-steps--improvements) <br>
 
 <br>
