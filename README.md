@@ -14,8 +14,8 @@ This project demonstrates automated UI and API tests for a healthcare platform w
 ## Table of Contents
 
 I. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Demos](#i-demos) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. a. [Automated Tests](#i-a-automated-tests) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. b. [Visual Studio Code & CLI](#i-b-visual-studio-code--cli) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. a. [Automated Tests - Selenium](#i-a-automated-tests---selenium) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I. b. [Visual Studio Code - UI & CLI](#i-b-visual-studio-code---ui--cli) <br>
 II. &nbsp;&nbsp;&nbsp;&nbsp; [Project Structure](#ii-project-structure) <br>
 III. &nbsp;&nbsp;&nbsp; [Prerequisites](#iii-prerequisites) <br>
 IV. &nbsp;&nbsp;&nbsp; [Setting JDK Path Dynamically](#iv-setting-jdk-path-dynamically) <br>
@@ -31,13 +31,13 @@ VIII. &nbsp; [Next steps / Improvements](#viii-next-steps--improvements) <br>
 
 ## I. Demos
 
-### I. a. Automated Tests
+### I. a. Automated Tests - Selenium
 *(Headed Testing on Google Chrome)* <br>
 
 ![Demo 1.1 (Fast)](demos/Demo1.1_Fast_orig.gif) <br><br>
 
 
-### I. b. Visual Studio Code & CLI
+### I. b. Visual Studio Code - UI & CLI
 *(Behind-logic example, structure and running tests from command line)* <br>
 
 ![Demo 2.1 (Fast)](demos/Demo2.1_Fast_orig.gif) <br>
